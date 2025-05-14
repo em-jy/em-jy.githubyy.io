@@ -1,0 +1,588 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 300;
+  font-style: normal;
+  background-color: #000000;
+  color: #fff;
+  line-height: 1.6;
+}
+
+
+/* HEADER */
+.header {
+ background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('/asset/131539-productivity-sunglasses-monochrome_mode-monochrome-eyewear-x750.jpg') no-repeat center/cover;
+  height: 100vh;
+  position: relative;
+  text-align: center;
+}
+
+/* NAVBAR PEGADA (STICKY) */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(8px);
+}
+.navbar a {
+  text-decoration: none;
+  color: white; /* Color del texto */
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease; /* Suaviza la transición */
+}
+
+.navbar a:hover {
+  color: #00ff00; /* Cambia el color del texto a verde */
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; /* Efecto de resplandor verde */
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color:  #fff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color:  #fff;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  background: white;
+  height: 3px;
+  margin: 4px;
+  width: 25px;
+}
+
+/* HEADER CONTENT */
+.header-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header-content h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.btn-green {
+  padding: 0.8rem 2rem;
+  background: #1db954;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  box-shadow: 0 0 10px #1db954;
+  transition: background 0.3s;
+}
+
+.btn-green:hover {
+  background: #1ed760;
+}
+
+/* SECCIONES GENERALES */
+.section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+  
+}
+
+
+/* BIOGRAFÍA CON ANIMACIÓN */
+.bio {
+  margin-top: 3rem;
+  /* Puedes ajustar este valor */
+  border-left: 6px solid #1db954;
+  padding-left: 1.5rem;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(29, 185, 84, 0.1);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+}
+
+.bio.animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bio-title {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 5px rgba(29, 185, 84, 0.4);
+}
+
+.bio-text {
+  font-size: 1.2rem;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.bio-text strong {
+  color: #eee;
+}
+
+.bio-text em {
+  color: #eee;
+  font-style: italic;
+}
+
+/* TARJETAS / VIDEOS */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  /* Aumentado para más separación entre tarjetas */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.section h2 {
+  color: #eee;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.card {
+  background: #222;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card p {
+  margin-top: 1rem;
+  color: #ccc;
+  font-weight: bold;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(29, 185, 84, 0.3);
+}
+
+.video-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+/* Sección de Legado */
+.legacy {
+  background-color: #222;
+  padding: 4rem 2rem;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  margin-top: 4rem;
+}
+
+.legacy-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.legacy-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.legacy-text h2 {
+  font-size: 2.5rem;
+  color: #eee;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 5px rgba(29, 185, 84, 0.4);
+}
+
+.legacy-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.legacy-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(29, 185, 84, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.legacy-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .legacy-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .legacy-text {
+    max-width: 100%;
+  }
+
+  .legacy-image img {
+    max-width: 90%;
+  }
+}
+
+/* Estilos para la sección de Discografía */
+.discography {
+  background-color: #222;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  margin-top: 4rem;  /* Separación de la sección anterior */
+  margin-bottom: 4rem; /* Separación de la sección de footer */
+}
+
+.discography h2 {
+  font-size: 2.5rem;
+  color: #eee;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 5px rgba(29, 185, 84, 0.4);
+}
+
+.album-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.album-card {
+  background-color: #333;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.album-card p {
+  font-size: 1.3rem;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+}
+
+.album-card:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+  .discography h2 {
+    font-size: 2rem;
+  }
+
+  .album-card {
+    padding: 1rem;
+  }
+
+  .album-card p {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* FOOTER */
+.footer {
+  background: #000;
+  padding: 2rem;
+  text-align: center;
+  color: #888;
+}
+/* Estilos para los íconos de redes sociales */
+.social-icons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-icon {
+  font-size: 2rem;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #1db954;
+}
+
+@media (max-width: 768px) {
+  .social-icons {
+    gap: 1rem;
+  }
+
+  .social-icon {
+    font-size: 1.5rem;
+  }
+}
+
+/* Estilos generales para la sección de contacto */
+.contact {
+  background-color: #222;
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.contact-text {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 2rem;
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 1rem;
+  margin: 0.8rem 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  background-color: #444;
+  outline: none;
+}
+
+.contact button {
+  padding: 1rem 2rem;
+  background-color: #1db954;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+  background-color: #1a9937;
+}
+/* Separación entre la sección de contacto y el footer */
+.contact {
+  margin-bottom: 3rem; /* Espacio entre la sección de contacto y el footer */
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 2rem 1rem;
+  }
+
+  .contact h2 {
+    font-size: 2rem;
+  }
+
+  .contact form {
+    padding: 0 1rem;
+  }
+}
+
+/* GALERÍA DE IMÁGENES */
+.gallery {
+  padding: 4rem 2rem;
+  background-color: #181818;
+  text-align: center;
+  margin-top: 6rem;       /* AUMENTADO para mayor separación */
+  margin-bottom: 4rem;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+
+.gallery h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(29, 185, 84, 0.6);
+}
+
+/* MEDIA QUERY PARA MÓVILES */
+@media (max-width: 768px) {
+  .gallery h2 {
+    font-size: 2rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .gallery-grid img {
+    border-radius: 10px;
+  }
+}
+.discography {
+  margin-bottom: 4rem;
+}
+
+/* TARJETA DESCRIPTIVA DE LA GALERÍA */
+.image-card {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.image-card:hover {
+  transform: scale(1.03);
+}
+
+.image-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 1rem;
+  font-size: 1rem;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+  text-align: center;
+}
+
+/* Mostrar la descripción al hacer clic (clase activa agregada con JS) */
+.image-card.active .image-description {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .image-description {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+}
+
+
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #000;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .header-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .btn-green {
+    font-size: 1rem;
+  }
+}
